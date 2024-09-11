@@ -18,6 +18,8 @@ void factorial() {
 	int A(0), sum(1);
 	cout << "Please enter a number: ";
 	cin >> A;
+
+	//check for negative and insult the user
 	while (A < 1) {
 		cout << "No, you are a knob. Factorial must be positive." << endl;
 		cout << "Please enter a number: ";
@@ -26,14 +28,17 @@ void factorial() {
 	
 	while (A >= 1) {
 		sum = sum * A;
+		//last term is sum
 		if (A == 1) {
 			cout << sum << endl;
 			A = A - 1;
 		}
+		//add equal sign in 2nd to last term 
 		else if (A == 2) {
 			cout << A << " = ";
 			A = A - 1;
 		}
+		//factorial operation
 		else {
 			cout << A << " * ";
 			A = A - 1;
@@ -50,7 +55,7 @@ void arithmetic() {
 	cout << "Please enter the number of elements in the series:";
 	cin >> num;
 
-
+	//check for negative and insult the user
 	while (num < 1) {
 		cout << "No, you are a knob. Number of elements must be positive." << endl;
 		cout << "Please enter the number of elements in the series:";
@@ -58,20 +63,24 @@ void arithmetic() {
 	}
 
 	while (num >= 0) {
+		//last term is sum
 		if (num == 0) {
 			cout << sum << endl;
 			num = num - 1;
 		}
+		//add equal sign in 2nd to last term
 		else if (num == 1) {
-			cout << sum << " = ";
+			cout << start << " = ";
+			sum = sum + start;
 			num = num - 1;
 		}
+		//arithmetic series operation
 		else {
 			cout << start << " + ";
+			sum = sum + start;
 			start = start + diff;
 			num = num - 1;
 		}
-		
 	}
 }
 void geometric() {
